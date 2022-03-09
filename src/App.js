@@ -6,9 +6,4 @@ class App extends React.Component{
     return (<div><App1 />Hello React</div>);
   }
 }
-class App1 extends React.Component{
-  render(){
-    return(<div>Heelo 2</div>)
-  }
-}
 export default App;

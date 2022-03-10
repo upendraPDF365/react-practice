@@ -1,6 +1,7 @@
 import React from 'react';
 
 import User from './User';
+import PageTitle from '../pageInfo/Title';
 class Users extends React.Component {
   constructor(props) {
     super(props);
@@ -25,6 +26,7 @@ class Users extends React.Component {
         pageNum: 1,
         pageElements: [1, 2, 3, 4],
       },
+      userListPageTitle: 'Users List From State',
     };
   }
   checkValues = () => {
@@ -64,32 +66,60 @@ class Users extends React.Component {
     console.log('Called-->');
     console.log('After ', this.state);
   };
+
+  changePageTitleButtonClick = () => {
+    this.setState({
+      userListPageTitle: 'Users List - Button',
+    });
+  };
+  changePageTitle = (value) => {
+    this.setState({
+      userListPageTitle: value,
+    });
+  };
+  changePageNameInput = (e) => {
+    console.log('Evtn ', e);
+    this.setState({
+      userListPageTitle: e.target.value,
+    });
+  };
   render() {
     return (
       <div>
-        <h2>{this.props.title}</h2>
-
+        <div>
+          <PageTitle name={this.state.userListPageTitle} />
+        </div>
+        <button onClick={this.changePageTitleButtonClick}>
+          Change Page Title - butoon click
+        </button>
+        <br />
+        <button onClick={this.changePageTitle.bind(this, 'Bind event')}>
+          Change Page Title - butoon click - bind
+        </button>
+        <br />
+        <br />
+        <form>
+        <input
+          type="text"
+          onChange={this.changePageNameInput}
+          value={this.state.userListPageTitle}
+          name="firstName"
+        /></form>
+        <br />
+        <br />
         <button onClick={this.checkValues}>CheckpageInfo</button>
         <br />
         <br />
         <button onClick={this.updateUsers}>UpdateUsers</button>
         <br />
         <ul>
-          <li>
-            <User age={this.state.users[0].age}>
-              {this.state.users[0].name}
-            </User>
-          </li>
-          <li>
-            <User age={this.state.users[1].age}>
-              {this.state.users[1].name}
-            </User>
-          </li>
-          <li>
-            <User age={this.state.users[2].age}>
-              {this.state.users[2].name}
-            </User>
-          </li>
+          {this.state.users.map((user) => {
+            return (
+              <li key={user.age}>
+                <User age={user.age}>{user.name}</User>
+              </li>
+            );
+          })}
         </ul>
       </div>
     );

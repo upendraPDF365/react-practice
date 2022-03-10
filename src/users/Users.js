@@ -2,6 +2,11 @@ import React from 'react';
 
 import User from './User';
 import PageTitle from '../pageInfo/Title';
+
+
+import OtherParent from '../parentToChildData/otherParent';
+
+
 class Users extends React.Component {
   constructor(props) {
     super(props);
@@ -89,7 +94,8 @@ class Users extends React.Component {
         <div>
           <PageTitle name={this.state.userListPageTitle} />
         </div>
-        <button onClick={this.changePageTitleButtonClick}>
+        <OtherParent />
+        {/* <button onClick={this.changePageTitleButtonClick}>
           Change Page Title - butoon click
         </button>
         <br />
@@ -110,7 +116,7 @@ class Users extends React.Component {
         <br />
         <button onClick={this.checkValues}>CheckpageInfo</button>
         <br />
-        <br />
+        <br /> */}
         <button onClick={this.updateUsers}>UpdateUsers</button>
         <br />
         <ul>

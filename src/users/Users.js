@@ -99,12 +99,13 @@ class Users extends React.Component {
         <br />
         <br />
         <form>
-        <input
-          type="text"
-          onChange={this.changePageNameInput}
-          value={this.state.userListPageTitle}
-          name="firstName"
-        /></form>
+          <input
+            type="text"
+            onChange={this.changePageNameInput}
+            value={this.state.userListPageTitle}
+            name="firstName"
+          />
+        </form>
         <br />
         <br />
         <button onClick={this.checkValues}>CheckpageInfo</button>

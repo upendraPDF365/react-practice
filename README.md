@@ -36,3 +36,5 @@ Functional
   props.children will show Upendra inside of the functional Component
 
 ---
+Props Vs state
+

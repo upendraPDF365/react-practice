@@ -36,9 +36,16 @@ Functional
   Ex: <User>Upendra</User>
   props.children will show Upendra inside of the functional Component
 
----
+<!-- --- -->
 
 Props Vs state
+
+setState:
+
+- when setting state vartual dom comes into picture it will chekc for what part of the dom needs to change and it will update.
+
+- setState is asynchronous, if you console state updated will not reflect immediately but dom will be updated after few seconds state data will be upadted
+<!--  -->
 
 <!-- ---------------------- -->
 

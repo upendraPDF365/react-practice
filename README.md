@@ -3,6 +3,7 @@
 [Edit on StackBlitz ⚡️](https://stackblitz.com/edit/react-bp6k58)
 
 <!-- JSX: -->
+
 It allows you to HTML looking syntax that transformed into lightweight javascript Objects
 
 check babeljs.io for more info
@@ -36,5 +37,35 @@ Functional
   props.children will show Upendra inside of the functional Component
 
 ---
+
 Props Vs state
 
+<!-- ---------------------- -->
+
+Two way data binding
+
+Below function calls on onclick on the button
+
+- onclick={this.functionName}
+
+Below function calls on page load, so avoid using brackets
+-onclick={this.functionName()}
+
+to send params, use bind function to this from call, apply, bind
+it gives better performance
+
+- onclick={this.funcionName.bind(this,'param value')}
+
+for two way binding
+
+use input
+
+<input type="text" onChange={this.funcionName} value={this.state.inputValue}>
+
+to receive the value in funcionName use event
+
+functionName = (e) =>{
+use e.target.value;
+}
+
+<!-- End -->
